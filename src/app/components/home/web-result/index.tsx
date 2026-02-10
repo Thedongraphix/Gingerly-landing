@@ -79,7 +79,7 @@ function WebResult() {
                           strokeWidth={1.5}
                         />
                       )}
-                      <span className="text-4xl font-instrument-serif italic font-normal">
+                      <span className="text-2xl sm:text-3xl md:text-4xl font-instrument-serif italic font-normal">
                         {item.title}
                       </span>
                     </div>
@@ -103,15 +103,15 @@ function WebResult() {
                 </div>
               </div>
             </div>
-            <div className="flex-col md:flex md:flex-row justify-center items-center text-center">
+            <div className="flex flex-col md:flex-row justify-center items-center text-center">
               {stats?.map((item, index) => (
                 <div
                   key={index}
-                  className="relative 2xl:px-24 px-16 md:py-8 py-4"
+                  className="relative px-6 sm:px-10 md:px-16 2xl:px-24 md:py-8 py-4"
                 >
                   <h2
                     ref={index === 0 ? ref : null}
-                    className="2xl:text-9xl md:text-7xl text-5xl"
+                    className="text-4xl sm:text-5xl md:text-7xl 2xl:text-9xl"
                   >
                     {inView ? (
                       <CountUp start={0} end={item.count} duration={3} />
