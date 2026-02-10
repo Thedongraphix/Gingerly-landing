@@ -112,7 +112,7 @@ function Innovation() {
                       >
                         <Card
                           className={cn(
-                            "border-none shadow-none ring-0 flex h-full flex-col p-8 rounded-2xl gap-4",
+                            "border-none shadow-none ring-0 flex h-full flex-col p-5 sm:p-8 rounded-2xl gap-3 sm:gap-4",
                             items.bg_color,
                           )}
                         >
@@ -152,7 +152,7 @@ function Innovation() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4 xl:flex xl:flex-row bg-black items-center justify-between dark:bg-white/5 py-8 px-7 sm:px-12 rounded-3xl w-full">
+            <div className="flex flex-col gap-6 xl:flex-row bg-black items-center justify-between dark:bg-white/5 py-8 px-5 sm:px-12 rounded-2xl sm:rounded-3xl w-full">
               <h4 className="text-white text-center xl:text-left">
                 When payments come in on time,
                 <br /> businesses grow faster.

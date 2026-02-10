@@ -51,7 +51,7 @@ function CreativeMind() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 w-full">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full">
               {sectorsList?.map((item, index) => (
                 <motion.div
                   key={index}
@@ -62,13 +62,13 @@ function CreativeMind() {
                   }}
                   animate={inView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, delay: index * 0.15 }}
-                  className="flex flex-col justify-between bg-dark_black dark:bg-white/10 rounded-2xl p-8"
+                  className="flex flex-col justify-between bg-dark_black dark:bg-white/10 rounded-2xl p-5 sm:p-8"
                 >
-                  <div className="flex flex-col gap-6">
-                    <span className="text-white/60 uppercase text-sm font-medium">
+                  <div className="flex flex-col gap-4 sm:gap-6">
+                    <span className="text-white/60 uppercase text-xs sm:text-sm font-medium">
                       {item.name}
                     </span>
-                    <h3 className="text-white text-2xl">
+                    <h3 className="text-white text-lg sm:text-xl md:text-2xl">
                       {item.description}
                     </h3>
                     <div>
@@ -77,7 +77,7 @@ function CreativeMind() {
                         alt={item.name}
                         width={344}
                         height={220}
-                        className="w-full h-52 object-cover rounded-lg"
+                        className="w-full h-40 sm:h-52 object-cover rounded-lg"
                       />
                     </div>
                   </div>

@@ -60,11 +60,11 @@ function OnlinePresence() {
               {howItWorksList?.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="group flex flex-col gap-6 p-8 rounded-2xl border border-border bg-white dark:bg-white/5 hover:shadow-lg transition-shadow"
+                  className="group flex flex-col gap-4 sm:gap-6 p-5 sm:p-8 rounded-2xl border border-border bg-white dark:bg-white/5 hover:shadow-lg transition-shadow"
                   {...bottomAnimation(index)}
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-5xl font-instrument-serif italic text-teal-500/30 font-normal">
+                    <span className="text-4xl sm:text-5xl font-instrument-serif italic text-teal-500/30 font-normal">
                       {item.step}
                     </span>
                     <div>
