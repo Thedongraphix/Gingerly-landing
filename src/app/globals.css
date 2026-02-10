@@ -201,11 +201,14 @@ layer(base);
 @layer utilities {
   html {
     scroll-behavior: smooth;
-    /* font-family: 'Inter Tight', sans-serif; */
+    overflow-x: hidden;
     @apply dark:bg-dark_black;
   }
 
   body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
   * {
@@ -246,19 +249,19 @@ layer(base);
   }
 
   h1 {
-    @apply lg:text-8xl md:text-7xl text-5xl leading-14 md:leading-20 lg:leading-24 font-medium text-foreground;
+    @apply text-3xl sm:text-4xl md:text-7xl lg:text-8xl leading-10 sm:leading-14 md:leading-20 lg:leading-24 font-medium text-foreground;
   }
 
   h2 {
-    @apply text-4xl md:text-5xl font-medium text-foreground;
+    @apply text-2xl sm:text-3xl md:text-5xl font-medium text-foreground;
   }
 
   h3 {
-    @apply text-5xl font-medium text-foreground;
+    @apply text-2xl sm:text-3xl md:text-5xl font-medium text-foreground;
   }
 
   h4 {
-    @apply text-2xl font-medium text-foreground;
+    @apply text-xl sm:text-2xl font-medium text-foreground;
   }
 
   h5 {
