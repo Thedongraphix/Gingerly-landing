@@ -39,7 +39,7 @@ function Testimonials() {
                   initial={{ x: -100, y: -100, opacity: 0 }}
                   animate={topLeftInView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8 }}
-                  className="p-8 gap-64 rounded-2xl flex flex-col relative bg-[url('/images/home/customerStories/customer_bg_img.jpg')] object-cover bg-center h-full w-full bg-cover bg-no-repeat"
+                  className="p-6 sm:p-8 gap-24 sm:gap-40 md:gap-64 rounded-2xl flex flex-col relative bg-[url('/images/home/customerStories/customer_bg_img.jpg')] object-cover bg-center h-full w-full bg-cover bg-no-repeat"
                 >
                   <span className="text-white/60 uppercase text-sm font-medium">
                     Customer stories
@@ -63,7 +63,7 @@ function Testimonials() {
                   initial={{ x: 100, y: -100, opacity: 0 }}
                   animate={topRightInView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col justify-between gap-36 xl:max-w-25 bg-pale-yellow rounded-2xl p-8"
+                  className="flex flex-col justify-between gap-16 sm:gap-24 md:gap-36 xl:max-w-25 bg-pale-yellow rounded-2xl p-6 sm:p-8"
                 >
                   <div>
                     <span className="uppercase text-sm font-medium text-dark_black/60">
@@ -71,10 +71,10 @@ function Testimonials() {
                     </span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-7xl font-medium dark:text-dark_black">
+                    <h2 className="text-5xl sm:text-7xl font-medium dark:text-dark_black">
                       95%
                     </h2>
-                    <h3 className="dark:text-dark_black text-2xl">
+                    <h3 className="dark:text-dark_black text-xl sm:text-2xl">
                       Average payment collection rate across businesses using Gingerly.
                     </h3>
                   </div>
@@ -88,7 +88,7 @@ function Testimonials() {
                   initial={{ x: -100, y: 100, opacity: 0 }}
                   animate={bottomLeftInView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col justify-between bg-dark_black xl:max-w-25 dark:bg-white/10 rounded-2xl p-8"
+                  className="flex flex-col justify-between bg-dark_black xl:max-w-25 dark:bg-white/10 rounded-2xl p-6 sm:p-8"
                 >
                   <div className="flex flex-col gap-6">
                     <span className="text-white/60 uppercase text-sm font-medium">
@@ -115,13 +115,13 @@ function Testimonials() {
                   initial={{ x: 100, y: 100, opacity: 0 }}
                   animate={bottomRightInView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col gap-24 justify-between bg-dark_black/5 dark:bg-white/5 p-8 rounded-2xl"
+                  className="flex flex-col gap-12 sm:gap-24 justify-between bg-dark_black/5 dark:bg-white/5 p-6 sm:p-8 rounded-2xl"
                 >
                   <div className="flex flex-col gap-6">
                     <span className="text-dark_black/60 dark:text-white/60 uppercase text-sm font-medium">
                       Customer stories
                     </span>
-                    <h2 className="text-2xl lg:text-5xl">
+                    <h2 className="text-xl sm:text-2xl lg:text-5xl">
                       &ldquo;We used to chase payments across three different platforms. Gingerly brought everything together — now we always know where our money is.&rdquo;
                     </h2>
                   </div>

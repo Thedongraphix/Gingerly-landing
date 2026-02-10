@@ -64,7 +64,7 @@ function CustomerStories() {
                 <motion.div
                   key={index}
                   {...bottomAnimation(index)}
-                  className={`flex flex-col gap-4 p-8 rounded-2xl ${
+                  className={`flex flex-col gap-3 sm:gap-4 p-5 sm:p-8 rounded-2xl ${
                     index === 0
                       ? "bg-teal-500/10 dark:bg-teal-500/10"
                       : index === 1
@@ -77,7 +77,7 @@ function CustomerStories() {
                   }`}
                 >
                   <div className="flex items-end gap-2">
-                    <span className="text-5xl font-medium">{item.metric}</span>
+                    <span className="text-3xl sm:text-4xl md:text-5xl font-medium">{item.metric}</span>
                   </div>
                   <p className="text-sm text-muted-foreground">{item.metricLabel}</p>
                   <h3 className="text-xl font-medium">{item.title}</h3>

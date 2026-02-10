@@ -32,7 +32,7 @@ const SingleAchievement = ({
   return (
     <div
       className={cn(
-        "group relative flex flex-col gap-8 p-8 2xl:p-10 rounded-2xl h-full",
+        "group relative flex flex-col gap-5 sm:gap-8 p-5 sm:p-8 2xl:p-10 rounded-2xl h-full",
         "border border-transparent transition-all duration-500 ease-out cursor-default",
         "hover:-translate-y-1.5 hover:shadow-xl",
         bg_color,
