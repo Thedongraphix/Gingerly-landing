@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // ─── HOW TO ADJUST LOGO SIZE ───
-// Mobile: h-[48px]  |  Desktop (md+): h-[130px]
+// Mobile: h-[72px]  |  Tablet (sm+): h-[100px]  |  Desktop (md+): h-[130px]
 // Edit the Tailwind classes on the <Image> elements below to change.
 // Width always scales automatically to keep proportions.
 
@@ -17,7 +17,7 @@ const Logo = () => {
                 height={36}
                 quality={100}
                 priority={true}
-                className="dark:hidden h-[48px] md:h-[130px] w-auto"
+                className="dark:hidden h-[72px] sm:h-[100px] md:h-[130px] w-auto"
             />
             {/* Dark mode logo */}
             <Image
@@ -27,7 +27,7 @@ const Logo = () => {
                 height={36}
                 quality={100}
                 priority={true}
-                className="dark:block hidden h-[48px] md:h-[130px] w-auto"
+                className="dark:block hidden h-[72px] sm:h-[100px] md:h-[130px] w-auto"
             />
         </Link> 
     );
