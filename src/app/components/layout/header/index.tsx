@@ -64,9 +64,9 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full">
-        <div className="container p-3">
-          <div className="flex items-center justify-between py-2 px-4">
+      <header className="fixed top-0 z-50 w-full max-w-[100vw] overflow-hidden">
+        <div className="container p-2 sm:p-3">
+          <div className="flex items-center justify-between py-1 sm:py-2 px-0 sm:px-4">
             {/* ── Logo: standalone, independent of nav ── */}
             <Logo />
 
