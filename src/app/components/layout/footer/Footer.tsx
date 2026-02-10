@@ -22,10 +22,10 @@ const Footer = () => {
     }, [])
 
   return (
-    <footer className='xl:pt-20 pb-6'>
+    <footer className='xl:pt-20 pb-6 overflow-hidden'>
       <div className='container'>
-        <div className='flex flex-col xl:flex-row py-16 gap-10 justify-between border-b border-dark_black/10 dark:border-white/10'>
-          <div className='flex flex-col gap-6 max-w-md'>
+        <div className='flex flex-col xl:flex-row py-10 sm:py-16 gap-8 sm:gap-10 justify-between border-b border-dark_black/10 dark:border-white/10'>
+          <div className='flex flex-col gap-4 sm:gap-6 max-w-md'>
             <Logo />
             <p className='opacity-60'>{footerData?.brand?.tagline}</p>
             <div className='flex gap-4'>

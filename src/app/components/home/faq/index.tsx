@@ -52,10 +52,10 @@ function Faq() {
                     key={`item-${index}`}
                     value={`item-${index}`}
                     className={cn(
-                      "p-6 border border-border rounded-2xl flex flex-col gap-3 ",
+                      "p-4 sm:p-6 border border-border rounded-2xl flex flex-col gap-3",
                     )}
                   >
-                    <AccordionTrigger className="p-0 text-xl font-medium hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden">
+                    <AccordionTrigger className="p-0 text-base sm:text-xl font-medium hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden">
                       <h4 className="text-foreground">{item.faq_que}</h4>
                       <PlusIcon className="w-6 h-6 shrink-0 transition-transform duration-200 group-aria-expanded/accordion-trigger:rotate-45" />
                     </AccordionTrigger>

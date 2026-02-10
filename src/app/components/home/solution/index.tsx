@@ -22,7 +22,7 @@ function Solutions() {
         <div className="container">
           <div
             ref={ref}
-            className="py-16 md:py-28 px-6 border border-dark_black/10 rounded-3xl bg-[linear-gradient(90deg,#CDEFFB_0%,#FFFFFF_33.23%,#FFFFFF_65.77%,#FDEECB_100%)] backdrop-blur-[200px] dark:opacity-80"
+            className="py-10 sm:py-16 md:py-28 px-4 sm:px-6 border border-dark_black/10 rounded-2xl sm:rounded-3xl bg-[linear-gradient(90deg,#CDEFFB_0%,#FFFFFF_33.23%,#FFFFFF_65.77%,#FDEECB_100%)] backdrop-blur-[200px] dark:opacity-80"
           >
             <motion.div
               {...bottomAnimation}
@@ -30,7 +30,7 @@ function Solutions() {
             >
               <div className="flex flex-col gap-4 items-center text-center">
                 <p className="text-sm uppercase tracking-widest text-teal-600 font-medium">Ready to get started?</p>
-                <h2 className="text-3xl md:text-5xl text-black">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl text-black">
                   <TextGenerateEffect words="Put your payments on" />
                   <TextGenerateEffect
                     words="autopilot"
