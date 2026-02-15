@@ -73,7 +73,7 @@ function Innovation() {
                 {...bottomAnimation(1)}
                 className="max-w-(--breakpoint-Xsm) text-center"
               >
-                <p className="text-sm uppercase tracking-widest text-teal-500 font-medium mb-4">Platform Features</p>
+                <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">Platform Features</p>
                 <h2>
                   <TextGenerateEffect
                     words="Everything you need to automate"
@@ -152,7 +152,7 @@ function Innovation() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-6 xl:flex-row bg-black items-center justify-between dark:bg-white/5 py-8 px-5 sm:px-12 rounded-2xl sm:rounded-3xl w-full">
+            <div className="flex flex-col gap-6 xl:flex-row bg-navy items-center justify-between dark:bg-white/5 py-8 px-5 sm:px-12 rounded-2xl sm:rounded-3xl w-full">
               <h4 className="text-white text-center xl:text-left">
                 When payments come in on time,
                 <br /> businesses grow faster.
@@ -163,10 +163,10 @@ function Innovation() {
                   nativeButton={false}
                   render={<Link href="/contact" />}
                 >
-                  <span className="relative z-10 transition-all duration-500 text-black">
+                  <span className="relative z-10 transition-all duration-500 text-navy">
                     Get Started
                   </span>
-                  <div className="absolute right-1 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                  <div className="absolute right-1 w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                     <ArrowUpRight size={16} />
                   </div>
                 </Button>
@@ -178,7 +178,7 @@ function Innovation() {
                   <span className="relative z-10 transition-all duration-500 text-white">
                     Request a Demo
                   </span>
-                  <div className="absolute right-1 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                  <div className="absolute right-1 w-10 h-10 bg-white text-navy rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                     <ArrowUpRight size={16} />
                   </div>
                 </Button>

@@ -62,7 +62,7 @@ const HeaderLinkContent: React.FC<{ item: any }> = ({ item }) => {
                     ${
                       activeLink === item.href
                         ? "bg-white text-black rounded-3xl shadow-header_shadow focus:bg-white"
-                        : "text-dark_black/60 dark:text-white focus:bg-white"
+                        : "text-navy/60 dark:text-white focus:bg-white"
                     }`}
     >
       {item.label}

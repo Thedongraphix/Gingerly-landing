@@ -35,7 +35,7 @@ function CreativeMind() {
         <div className="container">
           <div className="flex flex-col justify-center items-center gap-10 md:gap-16">
             <div className="max-w-2xl text-center">
-              <p className="text-sm uppercase tracking-widest text-teal-500 font-medium mb-4">
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">
                 Supported Sectors
               </p>
               <h2>
@@ -62,7 +62,7 @@ function CreativeMind() {
                   }}
                   animate={inView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, delay: index * 0.15 }}
-                  className="flex flex-col justify-between bg-dark_black dark:bg-white/10 rounded-2xl p-5 sm:p-8"
+                  className="flex flex-col justify-between bg-navy dark:bg-white/10 rounded-2xl p-5 sm:p-8"
                 >
                   <div className="flex flex-col gap-4 sm:gap-6">
                     <span className="text-white/60 uppercase text-xs sm:text-sm font-medium">

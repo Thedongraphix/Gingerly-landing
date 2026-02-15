@@ -31,7 +31,7 @@ function Achievements() {
         <div className="container">
           <div className="flex flex-col gap-10 md:gap-20">
             <div className="max-w-3xl text-center mx-auto">
-              <p className="text-sm uppercase tracking-widest text-teal-500 font-medium mb-4">
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">
                 Trust & Security
               </p>
               <h2>

@@ -58,7 +58,7 @@ function WebResult() {
         <div className="container">
           <div className="flex flex-col lg:gap-16 gap-5">
             <div className="flex flex-col items-center justify-center text-center gap-5">
-              <p className="text-sm uppercase tracking-widest text-teal-500 font-medium">The Problem</p>
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium">The Problem</p>
               <h2 className="max-w-5xl">
                 <TextGenerateEffect
                   words="Recurring payments shouldn't slow you down. Replace scattered tools with one simple system built for"
@@ -88,16 +88,16 @@ function WebResult() {
               </div>
               <div className="max-w-3xl mt-4 space-y-4">
                 <div className="grid md:grid-cols-3 gap-6 text-left">
-                  <div className="p-6 rounded-2xl bg-red-50 dark:bg-red-500/10">
-                    <h4 className="font-medium mb-2 text-red-600 dark:text-red-400">No Single View</h4>
+                  <div className="p-6 rounded-2xl bg-navy/5 dark:bg-white/5">
+                    <h4 className="font-medium mb-2 text-navy dark:text-white">No Single View</h4>
                     <p className="text-sm text-muted-foreground">Payments come in through banks, M-Pesa, agents, and spreadsheets — but you can never see the full picture in one place.</p>
                   </div>
-                  <div className="p-6 rounded-2xl bg-amber-50 dark:bg-amber-500/10">
-                    <h4 className="font-medium mb-2 text-amber-600 dark:text-amber-400">Too Much Time Chasing</h4>
+                  <div className="p-6 rounded-2xl bg-teal-brand/8 dark:bg-teal-brand/10">
+                    <h4 className="font-medium mb-2 text-teal-brand">Too Much Time Chasing</h4>
                     <p className="text-sm text-muted-foreground">Your team spends hours calling, texting, and reminding people to pay — time better spent growing the business.</p>
                   </div>
-                  <div className="p-6 rounded-2xl bg-orange-50 dark:bg-orange-500/10">
-                    <h4 className="font-medium mb-2 text-orange-600 dark:text-orange-400">Hard to Scale</h4>
+                  <div className="p-6 rounded-2xl bg-navy/8 dark:bg-white/8">
+                    <h4 className="font-medium mb-2 text-navy dark:text-white">Hard to Scale</h4>
                     <p className="text-sm text-muted-foreground">Manual processes break as you grow. The bigger you get, the messier it becomes.</p>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ function WebResult() {
                     ) : (
                       "0"
                     )}
-                    {item.suffix && <span className="text-teal-500">{item.suffix}</span>}
+                    {item.suffix && <span className="text-teal-brand">{item.suffix}</span>}
                   </h2>
                   <p
                     className={`mt-2 ${index !== 0 ? "text-muted-foreground" : ""}`}

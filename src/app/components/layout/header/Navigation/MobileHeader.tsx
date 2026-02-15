@@ -36,7 +36,7 @@ const MobileHeaderContent: React.FC<{ item: any }> = ({ item }) => {
       className={`rounded-md text-base font-medium flex w-full transition-all duration-200
         ${
           activeLink === item.href
-            ? "text-black bg-dark_black/5 dark:bg-white/10 dark:text-white"
+            ? "text-navy bg-navy/5 dark:bg-white/10 dark:text-white"
             : "text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
         }`}
     >

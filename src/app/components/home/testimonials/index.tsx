@@ -66,15 +66,15 @@ function Testimonials() {
                   className="flex flex-col justify-between gap-16 sm:gap-24 md:gap-36 xl:max-w-25 bg-pale-yellow rounded-2xl p-6 sm:p-8"
                 >
                   <div>
-                    <span className="uppercase text-sm font-medium text-dark_black/60">
+                    <span className="uppercase text-sm font-medium text-navy/60">
                       Facts & numbers
                     </span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-5xl sm:text-7xl font-medium dark:text-dark_black">
+                    <h2 className="text-5xl sm:text-7xl font-medium dark:text-navy">
                       95%
                     </h2>
-                    <h3 className="dark:text-dark_black text-xl sm:text-2xl">
+                    <h3 className="dark:text-navy text-xl sm:text-2xl">
                       Average payment collection rate across businesses using Gingerly.
                     </h3>
                   </div>
@@ -88,7 +88,7 @@ function Testimonials() {
                   initial={{ x: -100, y: 100, opacity: 0 }}
                   animate={bottomLeftInView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col justify-between bg-dark_black xl:max-w-25 dark:bg-white/10 rounded-2xl p-6 sm:p-8"
+                  className="flex flex-col justify-between bg-navy xl:max-w-25 dark:bg-white/10 rounded-2xl p-6 sm:p-8"
                 >
                   <div className="flex flex-col gap-6">
                     <span className="text-white/60 uppercase text-sm font-medium">
@@ -115,10 +115,10 @@ function Testimonials() {
                   initial={{ x: 100, y: 100, opacity: 0 }}
                   animate={bottomRightInView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col gap-12 sm:gap-24 justify-between bg-dark_black/5 dark:bg-white/5 p-6 sm:p-8 rounded-2xl"
+                  className="flex flex-col gap-12 sm:gap-24 justify-between bg-navy/5 dark:bg-white/5 p-6 sm:p-8 rounded-2xl"
                 >
                   <div className="flex flex-col gap-6">
-                    <span className="text-dark_black/60 dark:text-white/60 uppercase text-sm font-medium">
+                    <span className="text-navy/60 dark:text-white/60 uppercase text-sm font-medium">
                       Customer stories
                     </span>
                     <h2 className="text-xl sm:text-2xl lg:text-5xl">
@@ -127,7 +127,7 @@ function Testimonials() {
                   </div>
                   <div className="flex flex-col gap-1">
                     <p className="text-white">Sarah Otieno</p>
-                    <p className="text-dark_black/60 dark:text-white/60 text-sm">
+                    <p className="text-navy/60 dark:text-white/60 text-sm">
                       Finance Director, EduFirst Schools
                     </p>
                   </div>

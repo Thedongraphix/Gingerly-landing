@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <footer className='xl:pt-20 pb-6 overflow-hidden'>
       <div className='container'>
-        <div className='flex flex-col xl:flex-row py-10 sm:py-16 gap-8 sm:gap-10 justify-between border-b border-dark_black/10 dark:border-white/10'>
+        <div className='flex flex-col xl:flex-row py-10 sm:py-16 gap-8 sm:gap-10 justify-between border-b border-navy/10 dark:border-white/10'>
           <div className='flex flex-col gap-4 sm:gap-6 max-w-md'>
             <Logo />
             <p className='opacity-60'>{footerData?.brand?.tagline}</p>
@@ -64,7 +64,7 @@ const Footer = () => {
                   return (
                     <li
                       key={index}
-                      className='text-dark_black/60 hover:text-black dark:text-white/60 dark:hover:text-white'>
+                      className='text-navy/60 hover:text-navy dark:text-white/60 dark:hover:text-white'>
                       <Link href={item.url}>{item.name}</Link>
                     </li>
                   )
@@ -78,7 +78,7 @@ const Footer = () => {
                   return (
                     <li
                       key={index}
-                      className='text-dark_black/60 hover:text-black dark:text-white/60 dark:hover:text-white'>
+                      className='text-navy/60 hover:text-navy dark:text-white/60 dark:hover:text-white'>
                       <Link href={item.url}>{item.name}</Link>
                     </li>
                   )
@@ -87,15 +87,15 @@ const Footer = () => {
             </div>
             <div className='flex flex-col gap-4'>
               <p className='font-medium'>{footerData?.contactDetails?.name}</p>
-              <p className='text-dark_black/60 dark:text-white/60'>
+              <p className='text-navy/60 dark:text-white/60'>
                 {footerData?.contactDetails?.address}
               </p>
-              <p className='text-dark_black/60 hover:text-black dark:text-white/60 dark:hover:text-white'>
+              <p className='text-navy/60 hover:text-navy dark:text-white/60 dark:hover:text-white'>
                 <Link href={`mailto:${footerData?.contactDetails?.email}`}>
                   {footerData?.contactDetails?.email}
                 </Link>
               </p>
-              <p className='text-dark_black/60 hover:text-black dark:text-white/60 dark:hover:text-white'>
+              <p className='text-navy/60 hover:text-navy dark:text-white/60 dark:hover:text-white'>
                 <Link href={`tel:${footerData?.contactDetails?.phone}`}>
                   {footerData?.contactDetails?.phone}
                 </Link>
@@ -104,7 +104,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='flex justify-center mt-8'>
-          <p className='text-dark_black/60 dark:text-white/60'>
+          <p className='text-navy/60 dark:text-white/60'>
             {footerData?.copyright}
           </p>
         </div>

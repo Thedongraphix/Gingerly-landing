@@ -43,7 +43,7 @@ function OnlinePresence() {
         <div className="container">
           <div className="flex flex-col justify-center items-center gap-10 md:gap-20">
             <div className="max-w-2xl text-center">
-              <p className="text-sm uppercase tracking-widest text-teal-500 font-medium mb-4">How It Works</p>
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">How It Works</p>
               <h2>
                 <TextGenerateEffect
                   words="From setup to successful collection in"
@@ -64,12 +64,12 @@ function OnlinePresence() {
                   {...bottomAnimation(index)}
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-4xl sm:text-5xl font-instrument-serif italic text-teal-500/30 font-normal">
+                    <span className="text-4xl sm:text-5xl font-instrument-serif italic text-teal-brand/30 font-normal">
                       {item.step}
                     </span>
                     <div>
                       <h3 className="text-xl font-medium">{item.title}</h3>
-                      <p className="text-sm text-teal-500">{item.subtitle}</p>
+                      <p className="text-sm text-teal-brand">{item.subtitle}</p>
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">

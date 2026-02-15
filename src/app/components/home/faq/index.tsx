@@ -35,7 +35,7 @@ function Faq() {
         <div className="container">
           <div className="flex flex-col gap-10 md:gap-20">
             <div className="max-w-md text-center mx-auto">
-              <p className="text-sm uppercase tracking-widest text-teal-500 font-medium mb-4">FAQ</p>
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">FAQ</p>
               <h2>
                 <TextGenerateEffect words="Got questions? We've got" />
                 <TextGenerateEffect

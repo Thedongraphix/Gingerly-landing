@@ -43,7 +43,7 @@ function CustomerStories() {
         <div className="container">
           <div ref={ref} className="flex flex-col justify-center gap-10 md:gap-16">
             <div className="mx-auto max-w-3xl flex flex-col items-center text-center gap-4">
-              <p className="text-sm uppercase tracking-widest text-teal-500 font-medium">
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium">
                 Benefits & Value
               </p>
               <h2>
@@ -66,14 +66,14 @@ function CustomerStories() {
                   {...bottomAnimation(index)}
                   className={`flex flex-col gap-3 sm:gap-4 p-5 sm:p-8 rounded-2xl ${
                     index === 0
-                      ? "bg-teal-500/10 dark:bg-teal-500/10"
+                      ? "bg-teal-brand/10 dark:bg-teal-brand/10"
                       : index === 1
-                      ? "bg-sky-400/10 dark:bg-sky-400/10"
+                      ? "bg-navy/6 dark:bg-white/5"
                       : index === 2
-                      ? "bg-amber-400/10 dark:bg-amber-400/10"
+                      ? "bg-teal-brand/8 dark:bg-teal-brand/8"
                       : index === 3
-                      ? "bg-purple-500/10 dark:bg-purple-500/10 md:col-span-1 lg:col-span-1"
-                      : "bg-rose-500/10 dark:bg-rose-500/10 md:col-span-1 lg:col-span-2"
+                      ? "bg-navy/8 dark:bg-white/8 md:col-span-1 lg:col-span-1"
+                      : "bg-teal-brand/6 dark:bg-teal-brand/6 md:col-span-1 lg:col-span-2"
                   }`}
                 >
                   <div className="flex items-end gap-2">

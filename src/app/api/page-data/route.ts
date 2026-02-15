@@ -53,48 +53,48 @@ const innovationList = [
     title: "Automatic\nPayment Scheduling",
     description:
       "Set up your billing once, and payments happen on schedule — every week, month, or term. No manual work needed.",
-    bg_color: "bg-teal-500/10",
-    txt_color: "text-teal-500",
+    bg_color: "bg-teal-brand/10",
+    txt_color: "text-teal-brand",
   },
   {
     icon: "CreditCard",
     title: "All Payment Methods\nin One Place",
     description:
       "Accept M-Pesa, bank transfers, and cards all from one dashboard. Your customers pay the way they prefer.",
-    bg_color: "bg-sky-400/10",
-    txt_color: "text-sky-400",
+    bg_color: "bg-navy/8",
+    txt_color: "text-navy",
   },
   {
     icon: "FileCheck",
     title: "Automatic\nPayment Matching",
     description:
       "Every payment is instantly matched to the right customer and invoice. No more spreadsheets or guessing who paid.",
-    bg_color: "bg-orange-400/10",
-    txt_color: "text-orange-400",
+    bg_color: "bg-teal-brand/8",
+    txt_color: "text-teal-brand",
   },
   {
     icon: "RefreshCcw",
     title: "Failed Payment\nRecovery",
     description:
       "When a payment fails, Gingerly automatically retries and sends friendly reminders — so you recover money without lifting a finger.",
-    bg_color: "bg-purple-500/10",
-    txt_color: "text-purple-500",
+    bg_color: "bg-navy/6",
+    txt_color: "text-navy-light",
   },
   {
     icon: "BarChart3",
     title: "Real-Time\nDashboard & Reports",
     description:
       "See exactly how much you've collected, what's pending, and where your money is — all in a simple, clear dashboard.",
-    bg_color: "bg-lime-500/10",
-    txt_color: "text-lime-500",
+    bg_color: "bg-teal-brand/12",
+    txt_color: "text-teal-brand",
   },
   {
     icon: "Smartphone",
     title: "Cash Collection\nMade Digital",
     description:
       "Your field agents can record cash payments on the spot. Every shilling is tracked and accounted for — no more lost records.",
-    bg_color: "bg-rose-500/10",
-    txt_color: "text-rose-500",
+    bg_color: "bg-navy/10",
+    txt_color: "text-navy",
   },
 ];
 
@@ -159,17 +159,17 @@ const WebResultTagList = [
   {
     icon: "Eye",
     title: "Visibility",
-    color: "bg-teal-500/10 text-teal-500",
+    color: "bg-teal-brand/10 text-teal-brand",
   },
   {
     icon: "Zap",
     title: "Automation",
-    color: "bg-sky-400/10 text-sky-400",
+    color: "bg-navy/8 text-navy dark:bg-white/10 dark:text-white",
   },
   {
     icon: "TrendingUp",
     title: "Scale",
-    color: "bg-orange-400/10 text-orange-400",
+    color: "bg-teal-brand/8 text-teal-brand",
   },
 ];
 
@@ -283,12 +283,12 @@ const achievementsList = [
     title:
       "We use strong encryption and work only with certified, regulated payment partners to keep every transaction safe.",
     tag: "Trust",
-    bg_color: "bg-teal-500/10",
-    icon_bg: "bg-teal-500/20",
-    txt_color: "text-teal-600",
-    tag_color: "bg-teal-500/15 text-teal-600",
-    hover_border: "hover:border-teal-500/40",
-    hover_shadow: "hover:shadow-teal-500/10",
+    bg_color: "bg-teal-brand/8",
+    icon_bg: "bg-teal-brand/20",
+    txt_color: "text-teal-brand",
+    tag_color: "bg-teal-brand/15 text-teal-brand",
+    hover_border: "hover:border-teal-brand/40",
+    hover_shadow: "hover:shadow-teal-brand/10",
   },
   {
     icon: "Landmark",
@@ -296,12 +296,12 @@ const achievementsList = [
     title:
       "We work with licensed banks, mobile money providers, and payment processors you already know and trust.",
     tag: "Compliance",
-    bg_color: "bg-sky-400/10",
-    icon_bg: "bg-sky-400/20",
-    txt_color: "text-sky-500",
-    tag_color: "bg-sky-400/15 text-sky-500",
-    hover_border: "hover:border-sky-400/40",
-    hover_shadow: "hover:shadow-sky-400/10",
+    bg_color: "bg-navy/6",
+    icon_bg: "bg-navy/15",
+    txt_color: "text-navy dark:text-white",
+    tag_color: "bg-navy/10 text-navy dark:bg-white/10 dark:text-white",
+    hover_border: "hover:border-navy/30 dark:hover:border-white/30",
+    hover_shadow: "hover:shadow-navy/10",
   },
   {
     icon: "Fingerprint",
@@ -309,12 +309,12 @@ const achievementsList = [
     title:
       "You own your data, always. We follow strict privacy practices and you can export or delete your data anytime.",
     tag: "Privacy",
-    bg_color: "bg-amber-400/10",
-    icon_bg: "bg-amber-400/20",
-    txt_color: "text-amber-500",
-    tag_color: "bg-amber-500/15 text-amber-600",
-    hover_border: "hover:border-amber-400/40",
-    hover_shadow: "hover:shadow-amber-400/10",
+    bg_color: "bg-teal-brand/6",
+    icon_bg: "bg-teal-brand/15",
+    txt_color: "text-teal-brand",
+    tag_color: "bg-teal-brand/12 text-teal-brand",
+    hover_border: "hover:border-teal-brand/30",
+    hover_shadow: "hover:shadow-teal-brand/8",
   },
 ];
 

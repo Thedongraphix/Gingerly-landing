@@ -114,7 +114,7 @@ export default function Page() {
                                 <h4 className="font-semibold text-lg">13. Contact</h4>
                                 <p className="mt-3 text-muted-foreground">
                                     For questions regarding these Terms, please contact:{" "}
-                                    <Link href="mailto:support@gingerly.africa" className="text-teal-500 hover:underline">support@gingerly.africa</Link>
+                                    <Link href="mailto:support@gingerly.africa" className="text-teal-brand hover:underline">support@gingerly.africa</Link>
                                 </p>
                             </div>
                         </div>
