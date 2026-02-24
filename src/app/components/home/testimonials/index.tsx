@@ -1,8 +1,51 @@
 "use client";
 import Image from "next/image";
 import { TextGenerateEffect } from "@/app/components/ui/text-generate-effect";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { motion, AnimatePresence, useInView } from "motion/react";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Grace M.",
+    role: "Property Manager",
+    quote:
+      "\u201CRent week used to mean chaos. Within two months of switching to Gingerly, on-time payments jumped from 68% to 94%. We stopped chasing rent \u2014 and started running our properties properly.\u201D",
+  },
+  {
+    name: "Daniel O.",
+    role: "Bursar",
+    quote:
+      "\u201CFee season used to mean spreadsheets, late nights, and constant disputes. With Gingerly\u2019s automated reconciliation, we\u2019ve reduced disputes by nearly 70% and save 25\u201330 hours every month.\u201D",
+  },
+  {
+    name: "Aisha K.",
+    role: "Founder",
+    quote:
+      "\u201CFailed payments were quietly hurting our revenue. After integrating Gingerly, recovery improved by 32% through smart retries. Gingerly didn\u2019t just process payments \u2014 it stabilized our revenue.\u201D",
+  },
+  {
+    name: "Kevin R.",
+    role: "Owner",
+    quote:
+      "\u201CMembership billing was our biggest leak. With Gingerly, collections improved from 65% to 87% in one quarter. Now payments happen quietly in the background \u2014 and we focus on our members.\u201D",
+  },
+];
+
+const slideVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 300 : -300,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 300 : -300,
+    opacity: 0,
+  }),
+};
 
 function Testimonials() {
   const topLeftRef = useRef(null);
@@ -14,6 +57,31 @@ function Testimonials() {
   const topRightInView = useInView(topRightRef, { once: true });
   const bottomLeftInView = useInView(bottomLeftRef, { once: true });
   const bottomRightInView = useInView(bottomRightRef, { once: true });
+
+  const [[currentSlide, direction], setSlide] = useState([0, 0]);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const paginate = useCallback((newDirection: number) => {
+    setSlide(([prev]) => {
+      const next = prev + newDirection;
+      if (next < 0) return [testimonials.length - 1, newDirection];
+      if (next >= testimonials.length) return [0, newDirection];
+      return [next, newDirection];
+    });
+  }, []);
+
+  const goToSlide = useCallback((index: number) => {
+    setSlide(([prev]) => [index, index > prev ? 1 : -1]);
+  }, []);
+
+  // Auto-advance every 6 seconds
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => paginate(1), 6000);
+    return () => clearInterval(timer);
+  }, [isPaused, paginate]);
+
+  const current = testimonials[currentSlide];
 
   return (
     <section>
@@ -33,27 +101,94 @@ function Testimonials() {
 
             <div className="flex flex-col gap-6">
               <div className="flex flex-col xl:flex xl:flex-row gap-6">
-                {/* Top Left Box */}
+                {/* Top Left Box — Testimonial Slider */}
                 <motion.div
                   ref={topLeftRef}
                   initial={{ x: -100, y: -100, opacity: 0 }}
                   animate={topLeftInView ? { x: 0, y: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8 }}
-                  className="p-6 sm:p-8 gap-24 sm:gap-40 md:gap-64 rounded-2xl flex flex-col relative bg-[url('/images/home/customerStories/customer_bg_img.jpg')] object-cover bg-center h-full w-full bg-cover bg-no-repeat"
+                  className="rounded-2xl flex flex-col relative bg-[url('/images/home/customerStories/customer_bg_img.jpg')] object-cover bg-center h-full w-full bg-cover bg-no-repeat overflow-hidden"
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
                 >
-                  <span className="text-white/60 uppercase text-sm font-medium">
-                    Customer stories
-                  </span>
-                  <div className="flex flex-col gap-6">
-                    <h3 className="text-white">
-                      &ldquo;Gingerly transformed how we collect rent — our collection rate went from 60% to 95% in just two months!&rdquo;
-                    </h3>
-                    <div className="flex flex-col gap-1">
-                      <p className="text-white font-medium">Aneri Hassan</p>
-                      <p className="text-white/60 text-sm font-medium">
-                        Property Agent, Nairobi
-                      </p>
+                  {/* Slider content area */}
+                  <div className="relative flex flex-col justify-between p-6 sm:p-8 min-h-[340px] sm:min-h-[380px] md:min-h-[420px]">
+                    <AnimatePresence initial={false} custom={direction} mode="wait">
+                      <motion.div
+                        key={currentSlide}
+                        custom={direction}
+                        variants={slideVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{
+                          x: { type: "spring", stiffness: 300, damping: 30 },
+                          opacity: { duration: 0.25 },
+                        }}
+                        className="flex flex-col gap-24 sm:gap-32 md:gap-40"
+                      >
+                        <span className="text-white/60 uppercase text-sm font-medium">
+                          Customer stories
+                        </span>
+                        <div className="flex flex-col gap-6">
+                          <h3 className="text-white">
+                            {current.quote}
+                          </h3>
+                          <div className="flex flex-col gap-1">
+                            <p className="text-white font-medium">
+                              {current.name}
+                            </p>
+                            <p className="text-white/60 text-sm font-medium">
+                              {current.role}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+
+                    {/* Navigation Arrows */}
+                    <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 flex items-center gap-2 z-10">
+                      <button
+                        onClick={() => paginate(-1)}
+                        className="p-2 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm border border-white/10 text-white transition-all duration-200 cursor-pointer"
+                        aria-label="Previous testimonial"
+                      >
+                        <ChevronLeft size={16} />
+                      </button>
+                      <button
+                        onClick={() => paginate(1)}
+                        className="p-2 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm border border-white/10 text-white transition-all duration-200 cursor-pointer"
+                        aria-label="Next testimonial"
+                      >
+                        <ChevronRight size={16} />
+                      </button>
                     </div>
+                  </div>
+
+                  {/* Dot indicators at the bottom */}
+                  <div className="flex items-center justify-center gap-2 px-6 pb-5 sm:px-8 sm:pb-6">
+                    {testimonials.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => goToSlide(index)}
+                        className={`relative h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                          index === currentSlide
+                            ? "w-7 bg-white/80"
+                            : "w-1.5 bg-white/30 hover:bg-white/50"
+                        }`}
+                        aria-label={`Go to testimonial ${index + 1}`}
+                      >
+                        {index === currentSlide && !isPaused && (
+                          <motion.span
+                            className="absolute inset-0 rounded-full bg-white origin-left"
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 6, ease: "linear" }}
+                            key={`progress-${currentSlide}`}
+                          />
+                        )}
+                      </button>
+                    ))}
                   </div>
                 </motion.div>
 
@@ -142,4 +277,3 @@ function Testimonials() {
 }
 
 export default Testimonials;
-
