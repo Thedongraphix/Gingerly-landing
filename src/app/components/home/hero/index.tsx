@@ -50,7 +50,7 @@ function HeroSection() {
           COLOR_UPDATE_SPEED={10}
         />
       </div>
-      <div className="relative w-full pt-28 sm:pt-36 md:pt-44 2xl:pb-20 pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-[#D6EEF1] before:via-white before:to-[#E0E6F3] before:rounded-full before:top-24 before:blur-3xl before:-z-10 before:overflow-hidden dark:before:from-[#0A1A2E] dark:before:via-black dark:before:to-[#0E2A35] dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10">
+      <div className="relative w-full pt-32 sm:pt-40 md:pt-52 2xl:pb-20 pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-[#D6EEF1] before:via-white before:to-[#E0E6F3] before:rounded-full before:top-24 before:blur-3xl before:-z-10 before:overflow-hidden dark:before:from-[#0A1A2E] dark:before:via-black dark:before:to-[#0E2A35] dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10">
         <div className="container relative z-10">
           <div className="flex flex-col max-w-5xl mx-auto gap-6 sm:gap-8">
             <div className="relative flex flex-col text-center items-center sm:gap-6 gap-4">
