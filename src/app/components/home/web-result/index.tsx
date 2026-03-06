@@ -1,24 +1,10 @@
 "use client";
 
 import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "motion/react";
 import { TextGenerateEffect } from "@/app/components/ui/text-generate-effect";
-import { Eye, Zap, TrendingUp } from "lucide-react";
-
-const ICON_MAP = {
-  Eye,
-  Zap,
-  TrendingUp,
-} as const;
-
-type IconName = keyof typeof ICON_MAP;
-
-interface AboutUsData {
-  icon: IconName;
-  title: string;
-  color: string;
-}
+import { Eye, Zap, TrendingUp, ArrowRight } from "lucide-react";
 
 interface Statistics {
   title: string;
@@ -26,111 +12,181 @@ interface Statistics {
   suffix?: string;
 }
 
-function WebResult() {
-  const [data, setData] = useState<AboutUsData[] | null>(null);
-  const [stats, setStats] = useState<Statistics[] | null>(null);
+const PAIN_POINTS = [
+  {
+    icon: Eye,
+    number: "01",
+    pain: "No Single View",
+    painDetail:
+      "Payments come in through banks, M-Pesa, agents, and spreadsheets — but you can never see the full picture in one place.",
+    fix: "One unified dashboard",
+    bgColor: "bg-navy/5 dark:bg-white/5",
+    iconColor: "text-navy dark:text-white",
+  },
+  {
+    icon: Zap,
+    number: "02",
+    pain: "Too Much Time Chasing",
+    painDetail:
+      "Your team spends hours calling, texting, and reminding people to pay — time better spent growing the business.",
+    fix: "Automatic reminders & retries",
+    bgColor: "bg-teal-brand/8 dark:bg-teal-brand/10",
+    iconColor: "text-teal-brand",
+  },
+  {
+    icon: TrendingUp,
+    number: "03",
+    pain: "Hard to Scale",
+    painDetail:
+      "Manual processes break as you grow. What worked at 50 customers falls apart at 500.",
+    fix: "Built to scale from 10 to 10,000",
+    bgColor: "bg-navy/8 dark:bg-white/8",
+    iconColor: "text-navy dark:text-white",
+  },
+];
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
+function WebResult() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true, margin: "-50px" });
+  const [stats, setStats] = useState<Statistics[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch("/api/page-data");
         if (!res.ok) throw new Error("Failed to fetch");
-
         const responseData = await res.json();
-        setData(responseData?.WebResultTagList);
         setStats(responseData?.statisticsCounter);
       } catch (error) {
-        console.error("Error fetching services:", error);
+        console.error("Error fetching data:", error);
       }
     };
-
     fetchData();
   }, []);
 
+  const bottomAnimation = (index: number) => ({
+    initial: { y: 50, opacity: 0 },
+    animate: inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 },
+    transition: { duration: 0.8, delay: 0.4 + index * 0.2 },
+  });
+
   return (
     <section id="aboutus">
-      <div className="2xl:py-20 py-11">
+      <div ref={ref} className="2xl:py-20 py-11">
         <div className="container">
-          <div className="flex flex-col lg:gap-16 gap-5">
-            <div className="flex flex-col items-center justify-center text-center gap-5">
-              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium">The Problem</p>
-              <h2 className="max-w-5xl">
+          <div className="flex flex-col justify-center items-center gap-10 md:gap-16">
+
+            {/* ── Header ── */}
+            <motion.div
+              {...bottomAnimation(0)}
+              className="max-w-2xl text-center"
+            >
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">
+                The Problem
+              </p>
+              <h2>
                 <TextGenerateEffect
-                  words="Recurring payments shouldn't slow you down. Replace scattered tools with one simple system built for"
-                  duration={0.2}
+                  words="Every missed payment is money"
+                  duration={0.3}
+                />
+                <TextGenerateEffect
+                  words="slipping through the cracks"
+                  delay={0.8}
+                  className="font-instrument-serif italic font-normal"
                 />
               </h2>
-              <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4">
-                {data?.map((item, index) => {
-                  const IconComponent = ICON_MAP[item.icon];
-                  return (
+              <p className="mt-4 text-muted-foreground">
+                Businesses lose thousands every month to scattered tools, manual follow-ups, and processes that break at scale.
+              </p>
+            </motion.div>
+
+            {/* ── Pain Point Cards ── */}
+            <div className="grid md:grid-cols-3 gap-6 w-full">
+              {PAIN_POINTS.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ scale: 1.2, opacity: 0, filter: "blur(8px)" }}
+                    animate={
+                      inView
+                        ? { scale: 1, opacity: 1, filter: "blur(0px)" }
+                        : {}
+                    }
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.3 + index * 0.2,
+                      ease: "easeInOut",
+                    }}
+                    className="h-full"
+                  >
                     <div
-                      key={index}
-                      className={`flex items-center gap-3 py-2 px-6 rounded-full ${item.color}`}
+                      className={`flex flex-col h-full p-5 sm:p-8 rounded-2xl gap-4 sm:gap-5 ${item.bgColor}`}
                     >
-                      {IconComponent && (
-                        <IconComponent
-                          className="size-6 sm:size-8 lg:size-10 shrink-0"
-                          strokeWidth={1.5}
+                      {/* Number + Icon */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-4xl sm:text-5xl font-instrument-serif italic text-teal-brand/20 font-normal select-none">
+                          {item.number}
+                        </span>
+                        <Icon
+                          size={32}
+                          className={item.iconColor}
+                          strokeWidth={1}
                         />
-                      )}
-                      <span className="text-2xl sm:text-3xl md:text-4xl font-instrument-serif italic font-normal">
-                        {item.title}
-                      </span>
+                      </div>
+
+                      {/* Pain */}
+                      <div className="flex flex-col gap-2 flex-1">
+                        <h3 className="text-xl font-medium">{item.pain}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.painDetail}
+                        </p>
+                      </div>
+
+                      {/* Solution hint */}
+                      <div className="flex items-center gap-2 pt-2 border-t border-border">
+                        <ArrowRight
+                          size={14}
+                          className="text-teal-brand shrink-0"
+                          strokeWidth={2}
+                        />
+                        <span className="text-sm font-medium text-teal-brand">
+                          {item.fix}
+                        </span>
+                      </div>
                     </div>
-                  );
-                })}
-              </div>
-              <div className="max-w-3xl mt-4 space-y-4">
-                <div className="grid md:grid-cols-3 gap-6 text-left">
-                  <div className="p-6 rounded-2xl bg-navy/5 dark:bg-white/5">
-                    <h4 className="font-medium mb-2 text-navy dark:text-white">No Single View</h4>
-                    <p className="text-sm text-muted-foreground">Payments come in through banks, M-Pesa, agents, and spreadsheets — but you can never see the full picture in one place.</p>
-                  </div>
-                  <div className="p-6 rounded-2xl bg-teal-brand/8 dark:bg-teal-brand/10">
-                    <h4 className="font-medium mb-2 text-teal-brand">Too Much Time Chasing</h4>
-                    <p className="text-sm text-muted-foreground">Your team spends hours calling, texting, and reminding people to pay — time better spent growing the business.</p>
-                  </div>
-                  <div className="p-6 rounded-2xl bg-navy/8 dark:bg-white/8">
-                    <h4 className="font-medium mb-2 text-navy dark:text-white">Hard to Scale</h4>
-                    <p className="text-sm text-muted-foreground">Manual processes break as you grow. The bigger you get, the messier it becomes.</p>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                );
+              })}
             </div>
-            <div className="flex flex-col md:flex-row justify-center items-center text-center">
-              {stats?.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative px-6 sm:px-10 md:px-16 2xl:px-24 md:py-8 py-4"
-                >
-                  <h2
-                    ref={index === 0 ? ref : null}
-                    className="text-4xl sm:text-5xl md:text-7xl 2xl:text-9xl"
-                  >
-                    {inView ? (
-                      <CountUp start={0} end={item.count} duration={3} />
-                    ) : (
-                      "0"
-                    )}
-                    {item.suffix && <span className="text-teal-brand">{item.suffix}</span>}
-                  </h2>
-                  <p
-                    className={`mt-2 ${index !== 0 ? "text-muted-foreground" : ""}`}
-                  >
-                    {item.title}
-                  </p>
-                  {index !== stats.length - 1 && (
-                    <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 h-28 w-px bg-border" />
-                  )}
-                </div>
-              ))}
-            </div>
+
+            {/* ── Stats Bar ── */}
+            <motion.div
+              {...bottomAnimation(4)}
+              ref={statsRef}
+              className="w-full bg-navy dark:bg-white/5 rounded-2xl sm:rounded-3xl py-8 sm:py-10 px-5 sm:px-12"
+            >
+              <div className="grid grid-cols-3 divide-x divide-white/10 dark:divide-white/10">
+                {stats?.map((item, index) => (
+                  <div key={index} className="text-center px-2 sm:px-6">
+                    <p className="text-3xl sm:text-5xl md:text-6xl font-medium text-[#007B8A] tabular-nums">
+                      {statsInView ? (
+                        <CountUp start={0} end={item.count} duration={3} />
+                      ) : (
+                        "0"
+                      )}
+                      {item.suffix && item.suffix}
+                    </p>
+                    <p className="mt-2 text-xs sm:text-sm text-white/50">
+                      {item.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </div>
