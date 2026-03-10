@@ -145,7 +145,7 @@ const sectorsList = [
     name: "SaaS, Utilities & Memberships",
     description:
       "Automate monthly subscriptions, gym fees, utility bills, and membership dues. Payments happen on schedule with automatic retries if anything fails.",
-    image: "/images/home/onlinePresence/online_img_3.jpg",
+    image: "/images/home/onlinePresence/doctor-image.jpg",
   },
   {
     name: "Education & Childcare",
