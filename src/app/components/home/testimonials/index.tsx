@@ -234,7 +234,7 @@ function Testimonials() {
                     </h3>
                     <div>
                       <Image
-                        src="/images/home/customerStories/new-lady.jpg"
+                        src="/images/home/customerStories/latest-lady.jpg"
                         alt="image"
                         width={344}
                         height={220}
