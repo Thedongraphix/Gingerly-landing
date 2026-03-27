@@ -73,7 +73,7 @@ function Innovation() {
                 {...bottomAnimation(1)}
                 className="max-w-(--breakpoint-Xsm) text-center"
               >
-                <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">Platform Features</p>
+                <p className="text-sm uppercase tracking-widest text-teal-brand font-bold mb-4">Platform Features</p>
                 <h2>
                   <TextGenerateEffect
                     words="Everything you need to automate"

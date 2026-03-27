@@ -43,7 +43,7 @@ function OnlinePresence() {
         <div className="container">
           <div className="flex flex-col justify-center items-center gap-10 md:gap-20">
             <div className="max-w-2xl text-center">
-              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">How It Works</p>
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-bold mb-4">How It Works</p>
               <h2>
                 <TextGenerateEffect
                   words="From setup to successful collection in"

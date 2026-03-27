@@ -29,7 +29,7 @@ function Solutions() {
               className="flex flex-col gap-8 items-center md:max-w-3xl mx-auto"
             >
               <div className="flex flex-col gap-4 items-center text-center">
-                <p className="text-sm uppercase tracking-widest text-teal-brand font-medium">Ready to get started?</p>
+                <p className="text-sm uppercase tracking-widest text-teal-brand font-bold">Ready to get started?</p>
                 <h2 className="text-2xl sm:text-3xl md:text-5xl text-navy">
                   <TextGenerateEffect words="Put your payments on" />
                   <TextGenerateEffect

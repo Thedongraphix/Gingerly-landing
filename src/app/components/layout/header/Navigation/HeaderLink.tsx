@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 
-const OFFSET = 80; // Adjust this value based on your fixed header height
+const OFFSET = 100; // Adjust this value based on your fixed header height
 
 // Hook to manage the active link and apply offset
 const useActiveLink = (setActiveLink: (link: string) => void) => {
@@ -19,32 +19,12 @@ const useActiveLink = (setActiveLink: (link: string) => void) => {
       setActiveLink(fullPath);
     };
 
-    const handleScrollOffset = () => {
-      if (window.location.hash) {
-        const id = window.location.hash.substring(1);
-        const element = document.getElementById(id);
-        if (element) {
-          setTimeout(() => {
-            const elementPosition =
-              element.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-              top: elementPosition - OFFSET,
-              behavior: "smooth",
-            });
-          }, 0);
-        }
-      }
-    };
-
     updateActiveLink();
-    handleScrollOffset();
 
     window.addEventListener("hashchange", updateActiveLink);
-    window.addEventListener("hashchange", handleScrollOffset);
 
     return () => {
       window.removeEventListener("hashchange", updateActiveLink);
-      window.removeEventListener("hashchange", handleScrollOffset);
     };
   }, [pathname, searchParams, setActiveLink]);
 };
@@ -55,9 +35,26 @@ const HeaderLinkContent: React.FC<{ item: any }> = ({ item }) => {
 
   useActiveLink(setActiveLink);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (item.href.startsWith("#") || item.href.includes("#")) {
+      const targetId = item.href.split("#")[1];
+      const element = document.getElementById(targetId);
+      if (element) {
+        e.preventDefault();
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - OFFSET,
+          behavior: "smooth",
+        });
+        window.history.pushState(null, "", item.href);
+        setActiveLink(item.href);
+      }
+    }
+  };
+
   return (
     <NavigationMenuLink
-      render={<Link href={item.href} />}
+      asChild
       className={`px-4 py-2 text-base font-medium hover:text-black dark:hover:text-black hover:bg-white hover:rounded-3xl hover:shadow-header_shadow  
                     ${
                       activeLink === item.href
@@ -65,7 +62,9 @@ const HeaderLinkContent: React.FC<{ item: any }> = ({ item }) => {
                         : "text-navy/60 dark:text-white focus:bg-white"
                     }`}
     >
-      {item.label}
+      <Link href={item.href} onClick={handleClick}>
+        {item.label}
+      </Link>
     </NavigationMenuLink>
   );
 };

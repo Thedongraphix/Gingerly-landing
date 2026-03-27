@@ -35,7 +35,7 @@ function CreativeMind() {
         <div className="container">
           <div className="flex flex-col justify-center items-center gap-10 md:gap-16">
             <div className="max-w-2xl text-center">
-              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-bold mb-4">
                 Supported Sectors
               </p>
               <h2>

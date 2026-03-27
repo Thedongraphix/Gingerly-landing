@@ -83,7 +83,7 @@ function WebResult() {
               {...bottomAnimation(0)}
               className="max-w-2xl text-center"
             >
-              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium mb-4">
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-bold mb-4">
                 The Problem
               </p>
               <h2>
@@ -152,7 +152,7 @@ function WebResult() {
                           className="text-teal-brand shrink-0"
                           strokeWidth={2}
                         />
-                        <span className="text-sm font-medium text-teal-brand">
+                        <span className="text-sm font-bold text-teal-brand">
                           {item.fix}
                         </span>
                       </div>

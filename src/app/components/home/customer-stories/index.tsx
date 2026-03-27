@@ -43,7 +43,7 @@ function CustomerStories() {
         <div className="container">
           <div ref={ref} className="flex flex-col justify-center gap-10 md:gap-16">
             <div className="mx-auto max-w-3xl flex flex-col items-center text-center gap-4">
-              <p className="text-sm uppercase tracking-widest text-teal-brand font-medium">
+              <p className="text-sm uppercase tracking-widest text-teal-brand font-bold">
                 Benefits & Value
               </p>
               <h2>
