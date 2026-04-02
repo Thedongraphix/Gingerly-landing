@@ -54,7 +54,7 @@ const HeaderLinkContent: React.FC<{ item: any }> = ({ item }) => {
 
   return (
     <NavigationMenuLink
-      asChild
+      render={<Link href={item.href} onClick={handleClick} />}
       className={`px-4 py-2 text-base font-medium hover:text-black dark:hover:text-black hover:bg-white hover:rounded-3xl hover:shadow-header_shadow  
                     ${
                       activeLink === item.href
@@ -62,9 +62,7 @@ const HeaderLinkContent: React.FC<{ item: any }> = ({ item }) => {
                         : "text-navy/60 dark:text-white focus:bg-white"
                     }`}
     >
-      <Link href={item.href} onClick={handleClick}>
-        {item.label}
-      </Link>
+      {item.label}
     </NavigationMenuLink>
   );
 };
